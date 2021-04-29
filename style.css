@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Ruluko;
+  background-color: #f2f2f0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f0;
+  height: 300px;
+}
+header h1 {
+  color: #2c365d;
+  font-size: 70px;
+}
+header h2 {
+  color: #272e4f;
+  font-size: 25px;
+}
+content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  height: 50vh;
+}
+li {
+  font-size: 30px;
+  cursor: pointer;
+}
+li::before {
+  content: "■";
+  padding: 0 20px 0 0;
+  color: #ff5e3a;
+}
+div.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+}
+div.modal-body div.my-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+div.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.modal-body table tr td:nth-child(2) {
+  padding: 0 0 0 20px;
+  color: #ff5e3a;
+}
+@font-face {
+  font-family: Ruluko;
+  src: url(./Assets/Fonts/Ruluko/Ruluko-Regular.ttf);
+}
