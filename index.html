@@ -57,13 +57,13 @@
           Physics
         </li>
         <li
-          onClick="loadModal('Chemstry')"
+          onClick="loadModal('Chemistry')"
           class="myModal"
           class="myModal"
           data-bs-toggle="modal"
           data-bs-target="#Modal"
         >
-          Chemstry
+          Chemistry
         </li>
         <li
           onClick="loadModal('Biology')"
@@ -123,32 +123,7 @@
               />
               <h1 id="instructor">Ali Khalid</h1>
             </div>
-            <table>
-              <tr>
-                <td>Description</td>
-                <td>The science of numbers and their operations</td>
-              </tr>
-              <tr>
-                <td>Lesson one</td>
-                <td>Addion</td>
-              </tr>
-              <tr>
-                <td>Lesson Two</td>
-                <td>Substraction</td>
-              </tr>
-              <tr>
-                <td>Lesson Three</td>
-                <td>Multiplication</td>
-              </tr>
-              <tr>
-                <td>Lesson Four</td>
-                <td>Divition</td>
-              </tr>
-              <tr>
-                <td>Lesson Five</td>
-                <td>Pythagorean</td>
-              </tr>
-            </table>
+            <table id="my-table"></table>
             <a id="downloader" href="" download="Contify">Download</a>
             <div class="my-row">
               <h1>📚</h1>
@@ -176,20 +151,135 @@
           "Ali",
           "Nasser",
         ];
+        var contents = [
+          {
+            name: "Math",
+            content: [
+              "The science of numbers and their operations",
+              "Addion",
+              "Substraction",
+              "Multiplication",
+              "Divition",
+              "Pythagorean",
+            ],
+          },
+          {
+            name: "Arabic",
+            content: [
+              "the Semitic language of the Arabs",
+              "Alphabetical Order",
+              "History",
+              "Nouns in Literary Arabic",
+              "Verbs in Literary Arabic",
+              "Paragraph",
+            ],
+          },
+          {
+            name: "English",
+            content: [
+              "Alphabetical Order",
+              "History",
+              "Nouns",
+              "Verbs",
+              "Adjectives",
+              "Adverbs",
+            ],
+          },
+          {
+            name: "Physics",
+            content: [
+              "Physics is the natural science",
+              "Velocity",
+              "Thermodynamics",
+              "Electromagnetism",
+              "Relativity",
+              "Quantum Mechanics",
+            ],
+          },
+          {
+            name: "Chemistry",
+            content: [
+              "Chemistry is the scientific discipline",
+              "Organic",
+              "Analytical",
+              "Physical",
+              "Inorganic",
+              "Biochemistry",
+            ],
+          },
+          {
+            name: "Biology",
+            content: [
+              "Biology is the natural science",
+              "Biotic Factors",
+              "Anatomy",
+              "Physiology",
+              "Cytology",
+              "Ecology",
+            ],
+          },
+          {
+            name: "Islamic",
+            content: [
+              "Islam is an Abrahamic monotheistic religion",
+              "History",
+              "Law",
+              "Philosophy",
+              "Literature",
+              "Art",
+            ],
+          },
+          {
+            name: "Quran",
+            content: [
+              "The Quran is the central religious text of Islam",
+              "Monotheism",
+              "Eschatology",
+              "Prophets",
+              "Ethico-religious concepts",
+              "Encouragement for the sciences",
+            ],
+          },
+        ];
         var label = document.getElementById("exampleModalLabel");
         var instructor = document.getElementById("instructor");
         var downloader = document.getElementById("downloader");
+        var myTable = document.getElementById("my-table");
+        var myContent = contents.find((item) => item.name == content);
+        console.log(myContent);
         downloader.href = `./assets/materials/${content}.pdf`;
         label.innerHTML = content;
+        myTable.innerHTML = `
+                    <tr>
+                      <td>Description</td>
+                      <td>${myContent.content[0]}</td>
+                    </tr>
+                    <tr>
+                      <td>Lesson one</td>
+                      <td>${myContent.content[1]}</td>
+                    </tr>
+                    <tr>
+                      <td>Lesson Two</td>
+                      <td>${myContent.content[2]}</td>
+                    </tr>
+                    <tr>
+                      <td>Lesson Three</td>
+                      <td>${myContent.content[3]}</td>
+                    </tr>
+                    <tr>
+                      <td>Lesson Four</td>
+                      <td>${myContent.content[4]}</td>
+                    </tr>
+                    <tr>
+                      <td>Lesson Five</td>
+                      <td>${myContent.content[5]}</td>
+                    </tr>
+              `;
         instructor.innerHTML =
           instructors[Math.floor(Math.random() * instructors.length)];
       }
       var myModal = document.getElementById("myModal");
       var myInput = document.getElementById("myInput");
-
-      myModal.addEventListener("shown.bs.modal", function () {
-        myInput.focus();
-      });
     </script>
   </body>
 </html>
